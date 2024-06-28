@@ -1,72 +1,32 @@
-local a = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
-local b = a:MakeWindow({
-    Name = "北脚本",
-    HidePremium = false,
-    SaveConfig = true,
-    ConfigFolder = "北Config",
-    IntroText = "北脚本"
-})
-
-local key = "woshixiaoxueshen"
-local isUnlocked = false
-
-local c = b:MakeTab({
-    Name = "Key",
+local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/v9Pdp6kx"))()
+local Window = OrionLib:MakeWindow({Name = "培根脚本", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用培根脚本", ConfigFolder = "欢迎使用培根脚本"})
+local about = Window:MakeTab({
+    Name = "培根脚本",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-c:AddTextbox({
-    Name = "请输入密钥",
-    Default = "",
-    TextDisappear = true,
-    Callback = function(d)
-        if d == key then
-            isUnlocked = true
-            a:MakeNotification({
-                Title = "成功",
-                Content = "解锁成功你可以使用北脚本了",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        else
-            a:MakeNotification({
-                Title = "错误",
-                Content = "密钥错误请重新输入密钥",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        end
-    end
+CoreGui:SetCore("SendNotification", {
+    Title = "培根脚本",
+    Text = "加载成动，祝您游戏愉快",
+    Duration = 10, 
 })
 
-c:AddButton({
-    Name = "复制QQ群拿密码",
-    Callback = function()
-        setclipboard("https://qm.qq.com/q/dthYOtHKSY")
-        a:MakeNotification({
-            Title = "EZ",
-            Content = "已复制",
-            Image = "rbxassetid://4483345998",
-            Time = 5
-        })
-    end
+about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
+about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
+about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")
+
+local Tab = Window:MakeTab({
+	Name = "公告",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
-local function f(g)
-    return function(...)
-        if isUnlocked then
-            g(...)
-        else
-            a:MakeNotification({
-                Title = "Locked",
-                Content = "请输入密钥",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        end
-    end
-end
+Tab:AddParagraph("永久免费缝合脚本（群:923615138 b站:爱玩Roblox的小培根头呀）")
+
+Tab:AddParagraph("持续更新，如果发现不可用脚本请向作者反馈")
+
+Tab:AddParagraph("更新时间无:，更新内容：无")
 
 local e = b:MakeTab({
     Name = "Doors",
