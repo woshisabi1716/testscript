@@ -1,31 +1,4 @@
 local a = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
-local about = Window:MakeTab({
-    Name = "培根脚本",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-CoreGui:SetCore("SendNotification", {
-    Title = "培根脚本",
-    Text = "加载成动，祝您游戏愉快",
-    Duration = 10, 
-})
-
-about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
-about:AddParagraph("您的注入器:"," "..identifyexecutor().."")
-about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")
-
-local Tab = Window:MakeTab({
-	Name = "公告",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddParagraph("永久免费缝合脚本（群:923615138 b站:爱玩Roblox的小培根头呀）")
-
-Tab:AddParagraph("持续更新，如果发现不可用脚本请向作者反馈")
-
-Tab:AddParagraph("更新时间无:，更新内容：无")
 
 local e = b:MakeTab({
     Name = "Doors",
