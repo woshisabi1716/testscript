@@ -1,10 +1,65 @@
 local a = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local b = a:MakeWindow({
+    Name = "北脚本",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "北Config",
+    IntroText = "北脚本"
+})
+
+local key = "woshixiaoxueshen"
+local isUnlocked = false
+
+local c = b:MakeTab({
+    Name = "Key",
+    Icon = "rbxassetid://17017840425",
+    PremiumOnly = false
+})
+
+c:AddTextbox({
+    Name = "请输入密钥",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(d)
+        if d == key then
+            isUnlocked = true
+            a:MakeNotification({
+                Title = "成功",
+                Content = "解锁成功你可以使用北脚本了",
+                Image = "rbxassetid://17017840425",
+                Time = 5
+            })
+        else
+            a:MakeNotification({
+                Title = "错误",
+                Content = "密钥错误请重新输入密钥",
+                Image = "rbxassetid://17017840425",
+                Time = 5
+            })
+        end
+    end
+})
 
 local e = b:MakeTab({
     Name = "Doors",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
+
+local function f(g)
+    return function(...)
+        if isUnlocked then
+            g(...)
+        else
+            a:MakeNotification({
+                Title = "Locked",
+                Content = "请输入密钥",
+                Image = "rbxassetid://17017840425",
+                Time = 5
+            })
+        end
+    end
+end
 
 e:AddButton({
 	Name = "mshub(未汉化)",
