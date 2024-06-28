@@ -12,7 +12,7 @@ local isUnlocked = false
 
 local c = b:MakeTab({
     Name = "Key",
-    Icon = "rbxassetid://17017840425",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
@@ -26,14 +26,14 @@ c:AddTextbox({
             a:MakeNotification({
                 Title = "成功",
                 Content = "解锁成功你可以使用北脚本了",
-                Image = "rbxassetid://17017840425",
+                Image = "rbxassetid://4483345998",
                 Time = 5
             })
         else
             a:MakeNotification({
                 Title = "错误",
                 Content = "密钥错误请重新输入密钥",
-                Image = "rbxassetid://17017840425",
+                Image = "rbxassetid://4483345998",
                 Time = 5
             })
         end
@@ -47,7 +47,7 @@ c:AddButton({
         a:MakeNotification({
             Title = "EZ",
             Content = "已复制",
-            Image = "rbxassetid://17017840425",
+            Image = "rbxassetid://4483345998",
             Time = 5
         })
     end
@@ -61,7 +61,7 @@ local function f(g)
             a:MakeNotification({
                 Title = "Locked",
                 Content = "请输入密钥",
-                Image = "rbxassetid://17017840425",
+                Image = "rbxassetid://4483345998",
                 Time = 5
             })
         end
@@ -70,7 +70,7 @@ end
 
 local e = b:MakeTab({
     Name = "Doors",
-    Icon = "rbxassetid://17017840425",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
@@ -373,9 +373,24 @@ end
 
 local f = b:MakeTab({
     Name = "杂项",
-    Icon = "rbxassetid://17017840425",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
+
+local function f(g)
+    return function(...)
+        if isUnlocked then
+            g(...)
+        else
+            a:MakeNotification({
+                Title = "Locked",
+                Content = "请输入密钥",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+end
 
 f:AddButton({
 	Name = "飞行",
