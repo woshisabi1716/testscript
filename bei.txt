@@ -53,12 +53,6 @@ c:AddButton({
     end
 })
 
-local e = b:MakeTab({
-    Name = "Doors",
-    Icon = "rbxassetid://17017840425",
-    PremiumOnly = false
-})
-
 local function f(g)
     return function(...)
         if isUnlocked then
@@ -73,6 +67,12 @@ local function f(g)
         end
     end
 end
+
+local e = b:MakeTab({
+    Name = "Doors",
+    Icon = "rbxassetid://17017840425",
+    PremiumOnly = false
+})
 
 e:AddButton({
 	Name = "mshub(未汉化)",
