@@ -69,7 +69,7 @@ Start.TextWrapped = true
 Start.MouseButton1Click:Connect(function()
     if Key.Text == "woshixiaoxueshen" then
         ScreenGui:Destroy()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/woshisabi1716/testscript/main/ez.txt"))();
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/woshisabi1716/testscript/main/ez.lua"))();
 
 OrionLib:Init()
     else
